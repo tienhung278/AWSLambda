@@ -14,7 +14,7 @@ resource "aws_lambda_function" "test_lambda" {
   role          = aws_iam_role.lambda_role.arn
   handler       = "AWSLambda::AWSLambda.Function::FunctionHandler"
 
-  # source_code_hash = filebase64sha256(local.lambda_zip_location)
+  source_code_hash = filebase64sha256(local.lambda_zip_location)
 
   runtime = "dotnet6"
 }
